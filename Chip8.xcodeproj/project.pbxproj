@@ -11,18 +11,9 @@
 		9BD117581A4CF15700FE4EEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD117571A4CF15700FE4EEF /* main.m */; };
 		9BD1175A1A4CF15700FE4EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD117591A4CF15700FE4EEF /* Images.xcassets */; };
 		9BD1175D1A4CF15700FE4EEF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD1175B1A4CF15700FE4EEF /* MainMenu.xib */; };
-		9BD117691A4CF15700FE4EEF /* Chip8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD117681A4CF15700FE4EEF /* Chip8Tests.m */; };
+		9BD117741A4CF16500FE4EEF /* Chip8.c in Sources */ = {isa = PBXBuildFile; fileRef = 9BD117721A4CF16500FE4EEF /* Chip8.c */; };
+		9BD117771A4CF18E00FE4EEF /* Chip8View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD117761A4CF18E00FE4EEF /* Chip8View.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9BD117631A4CF15700FE4EEF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9BD117471A4CF15700FE4EEF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9BD1174E1A4CF15700FE4EEF;
-			remoteInfo = Chip8;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9BD1174F1A4CF15700FE4EEF /* Chip8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chip8.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,9 +23,10 @@
 		9BD117571A4CF15700FE4EEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BD117591A4CF15700FE4EEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9BD1175C1A4CF15700FE4EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		9BD117621A4CF15700FE4EEF /* Chip8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Chip8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BD117671A4CF15700FE4EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD117681A4CF15700FE4EEF /* Chip8Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chip8Tests.m; sourceTree = "<group>"; };
+		9BD117721A4CF16500FE4EEF /* Chip8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Chip8.c; path = Chip8/Chip8.c; sourceTree = "<group>"; };
+		9BD117731A4CF16500FE4EEF /* Chip8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chip8.h; path = Chip8/Chip8.h; sourceTree = "<group>"; };
+		9BD117751A4CF18E00FE4EEF /* Chip8View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chip8View.h; sourceTree = "<group>"; };
+		9BD117761A4CF18E00FE4EEF /* Chip8View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chip8View.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,47 +37,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD1175F1A4CF15700FE4EEF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9BD117461A4CF15700FE4EEF = {
+		9BB704901B35B8C6002B0C55 /* Chip8 Emulator */ = {
 			isa = PBXGroup;
 			children = (
-				9BD117511A4CF15700FE4EEF /* Chip8 */,
-				9BD117651A4CF15700FE4EEF /* Chip8Tests */,
-				9BD117501A4CF15700FE4EEF /* Products */,
+				9BD117731A4CF16500FE4EEF /* Chip8.h */,
+				9BD117721A4CF16500FE4EEF /* Chip8.c */,
 			);
+			name = "Chip8 Emulator";
 			sourceTree = "<group>";
 		};
-		9BD117501A4CF15700FE4EEF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9BD1174F1A4CF15700FE4EEF /* Chip8.app */,
-				9BD117621A4CF15700FE4EEF /* Chip8Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9BD117511A4CF15700FE4EEF /* Chip8 */ = {
-			isa = PBXGroup;
-			children = (
-				9BD117541A4CF15700FE4EEF /* AppDelegate.h */,
-				9BD117551A4CF15700FE4EEF /* AppDelegate.m */,
-				9BD117591A4CF15700FE4EEF /* Images.xcassets */,
-				9BD1175B1A4CF15700FE4EEF /* MainMenu.xib */,
-				9BD117521A4CF15700FE4EEF /* Supporting Files */,
-			);
-			path = Chip8;
-			sourceTree = "<group>";
-		};
-		9BD117521A4CF15700FE4EEF /* Supporting Files */ = {
+		9BB704911B35CCEC002B0C55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				9BD117531A4CF15700FE4EEF /* Info.plist */,
@@ -94,21 +58,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9BD117651A4CF15700FE4EEF /* Chip8Tests */ = {
+		9BD117461A4CF15700FE4EEF = {
 			isa = PBXGroup;
 			children = (
-				9BD117681A4CF15700FE4EEF /* Chip8Tests.m */,
-				9BD117661A4CF15700FE4EEF /* Supporting Files */,
+				9BB704901B35B8C6002B0C55 /* Chip8 Emulator */,
+				9BD117511A4CF15700FE4EEF /* App */,
+				9BD117501A4CF15700FE4EEF /* Products */,
 			);
-			path = Chip8Tests;
 			sourceTree = "<group>";
 		};
-		9BD117661A4CF15700FE4EEF /* Supporting Files */ = {
+		9BD117501A4CF15700FE4EEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BD117671A4CF15700FE4EEF /* Info.plist */,
+				9BD1174F1A4CF15700FE4EEF /* Chip8.app */,
 			);
-			name = "Supporting Files";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BD117511A4CF15700FE4EEF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9BD117541A4CF15700FE4EEF /* AppDelegate.h */,
+				9BD117551A4CF15700FE4EEF /* AppDelegate.m */,
+				9BD117751A4CF18E00FE4EEF /* Chip8View.h */,
+				9BD117761A4CF18E00FE4EEF /* Chip8View.m */,
+				9BD117591A4CF15700FE4EEF /* Images.xcassets */,
+				9BD1175B1A4CF15700FE4EEF /* MainMenu.xib */,
+				9BB704911B35CCEC002B0C55 /* Supporting Files */,
+			);
+			name = App;
+			path = Chip8;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,24 +110,6 @@
 			productReference = 9BD1174F1A4CF15700FE4EEF /* Chip8.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9BD117611A4CF15700FE4EEF /* Chip8Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD1176F1A4CF15700FE4EEF /* Build configuration list for PBXNativeTarget "Chip8Tests" */;
-			buildPhases = (
-				9BD1175E1A4CF15700FE4EEF /* Sources */,
-				9BD1175F1A4CF15700FE4EEF /* Frameworks */,
-				9BD117601A4CF15700FE4EEF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BD117641A4CF15700FE4EEF /* PBXTargetDependency */,
-			);
-			name = Chip8Tests;
-			productName = Chip8Tests;
-			productReference = 9BD117621A4CF15700FE4EEF /* Chip8Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,10 +121,6 @@
 				TargetAttributes = {
 					9BD1174E1A4CF15700FE4EEF = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					9BD117611A4CF15700FE4EEF = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 9BD1174E1A4CF15700FE4EEF;
 					};
 				};
 			};
@@ -181,7 +138,6 @@
 			projectRoot = "";
 			targets = (
 				9BD1174E1A4CF15700FE4EEF /* Chip8 */,
-				9BD117611A4CF15700FE4EEF /* Chip8Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -196,13 +152,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD117601A4CF15700FE4EEF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -210,28 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD117741A4CF16500FE4EEF /* Chip8.c in Sources */,
+				9BD117771A4CF18E00FE4EEF /* Chip8View.m in Sources */,
 				9BD117581A4CF15700FE4EEF /* main.m in Sources */,
 				9BD117561A4CF15700FE4EEF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD1175E1A4CF15700FE4EEF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9BD117691A4CF15700FE4EEF /* Chip8Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9BD117641A4CF15700FE4EEF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BD1174E1A4CF15700FE4EEF /* Chip8 */;
-			targetProxy = 9BD117631A4CF15700FE4EEF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9BD1175B1A4CF15700FE4EEF /* MainMenu.xib */ = {
@@ -343,42 +278,6 @@
 			};
 			name = Release;
 		};
-		9BD117701A4CF15700FE4EEF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Chip8Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8.app/Contents/MacOS/Chip8";
-			};
-			name = Debug;
-		};
-		9BD117711A4CF15700FE4EEF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Chip8Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8.app/Contents/MacOS/Chip8";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -398,14 +297,7 @@
 				9BD1176E1A4CF15700FE4EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		9BD1176F1A4CF15700FE4EEF /* Build configuration list for PBXNativeTarget "Chip8Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BD117701A4CF15700FE4EEF /* Debug */,
-				9BD117711A4CF15700FE4EEF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
