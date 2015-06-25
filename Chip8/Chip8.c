@@ -44,7 +44,7 @@
  The Chip8 system has a HEX based keypad (0x0 - 0xF).
  
  Opcode Table
- • NNN		address
+ • NNN		12-bit address
  • NN		8-bit constant
  • N		4-bit constant
  • X and Y	4-bit register identifier
@@ -562,7 +562,6 @@ void emulateCycle() {
 			for (unsigned char r = 0; r <= X; r++) {
 				memory[I+r] = V[r];
 			}
-			I = I + X + 1;
 			pc += 2;
 		}
 		else if (submaskedOpcode == 0x0065) {
@@ -570,7 +569,6 @@ void emulateCycle() {
 			for (unsigned char r = 0; r <= X; r++) {
 				V[r] = memory[I+r];
 			}
-			I = I + X + 1;
 			pc += 2;
 		}
 		else {
