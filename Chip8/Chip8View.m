@@ -35,6 +35,8 @@
 			}
 		}
 	}
+	
+	setNeedsDisplay(false);
 }
 
 - (BOOL)canBecomeKeyView {

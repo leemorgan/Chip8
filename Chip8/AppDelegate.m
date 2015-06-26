@@ -69,7 +69,9 @@
 
 - (void)updateDisplay {
 	
-	[self.chip8view setNeedsDisplay:YES];
+	if (needsDisplay() == true) {
+		[self.chip8view setNeedsDisplay:YES];
+	}
 }
 
 - (IBAction)openROM:(id)sender {

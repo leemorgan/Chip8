@@ -174,6 +174,10 @@ unsigned char chip8_fontset[80] = {
 };
 
 
+// Flag used to let the renderer (Chip8View) know when we have updated the graphics memory.
+bool _needsDisplay = false;
+
+
 // Function Prototypes
 void chip8init();
 void unknownOpcode();
@@ -477,6 +481,9 @@ void emulateCycle() {
 				}
 			}
 		}
+		
+		_needsDisplay = true;
+		
 		pc += 2;
 	}
 	else if (maskedOpcode == 0xE000) {
@@ -723,3 +730,10 @@ void keyup(unsigned char k) {
 	}
 }
 
+bool needsDisplay() {
+	return _needsDisplay;
+}
+
+void setNeedsDisplay(bool needsDisplay) {
+	_needsDisplay = needsDisplay;
+}

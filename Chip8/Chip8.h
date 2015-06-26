@@ -25,5 +25,8 @@ void keyup(unsigned char k);
 
 extern unsigned char gfx[64][32]; // we expose the graphics buffer so the Chip8View can read from it to render to the screen.
 
+bool needsDisplay();
+void setNeedsDisplay(bool needsDisplay);
+
 
 #endif /* defined(__Chip8__Chip8__) */
