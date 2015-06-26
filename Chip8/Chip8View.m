@@ -36,7 +36,7 @@
 		}
 	}
 	
-	setNeedsDisplay(false);
+	chip8_setNeedsDisplay(false);
 }
 
 - (BOOL)canBecomeKeyView {
@@ -59,52 +59,52 @@
 	
 	switch (character) {
 		case '1':
-			keydown('1');
+			chip8_keydown('1');
 			break;
 		case '2':
-			keydown('2');
+			chip8_keydown('2');
 			break;
 		case '3':
-			keydown('3');
+			chip8_keydown('3');
 			break;
 		case '4':
-			keydown('C');
+			chip8_keydown('C');
 			break;
 		case 'q':
-			keydown('4');
+			chip8_keydown('4');
 			break;
 		case 'w':
-			keydown('5');
+			chip8_keydown('5');
 			break;
 		case 'e':
-			keydown('6');
+			chip8_keydown('6');
 			break;
 		case 'r':
-			keydown('D');
+			chip8_keydown('D');
 			break;
 		case 'a':
-			keydown('7');
+			chip8_keydown('7');
 			break;
 		case 's':
-			keydown('8');
+			chip8_keydown('8');
 			break;
 		case 'd':
-			keydown('9');
+			chip8_keydown('9');
 			break;
 		case 'f':
-			keydown('E');
+			chip8_keydown('E');
 			break;
 		case 'z':
-			keydown('A');
+			chip8_keydown('A');
 			break;
 		case 'x':
-			keydown('0');
+			chip8_keydown('0');
 			break;
 		case 'c':
-			keydown('B');
+			chip8_keydown('B');
 			break;
 		case 'v':
-			keydown('F');
+			chip8_keydown('F');
 			break;
 		default:
 			NSLog(@"Unrecognized key");
@@ -120,52 +120,52 @@
 	
 	switch (character) {
 		case '1':
-			keyup('1');
+			chip8_keyup('1');
 			break;
 		case '2':
-			keyup('2');
+			chip8_keyup('2');
 			break;
 		case '3':
-			keyup('3');
+			chip8_keyup('3');
 			break;
 		case '4':
-			keyup('C');
+			chip8_keyup('C');
 			break;
 		case 'q':
-			keyup('4');
+			chip8_keyup('4');
 			break;
 		case 'w':
-			keyup('5');
+			chip8_keyup('5');
 			break;
 		case 'e':
-			keyup('6');
+			chip8_keyup('6');
 			break;
 		case 'r':
-			keyup('D');
+			chip8_keyup('D');
 			break;
 		case 'a':
-			keyup('7');
+			chip8_keyup('7');
 			break;
 		case 's':
-			keyup('8');
+			chip8_keyup('8');
 			break;
 		case 'd':
-			keyup('9');
+			chip8_keyup('9');
 			break;
 		case 'f':
-			keyup('E');
+			chip8_keyup('E');
 			break;
 		case 'z':
-			keyup('A');
+			chip8_keyup('A');
 			break;
 		case 'x':
-			keyup('0');
+			chip8_keyup('0');
 			break;
 		case 'c':
-			keyup('B');
+			chip8_keyup('B');
 			break;
 		case 'v':
-			keyup('F');
+			chip8_keyup('F');
 			break;
 	}
 }

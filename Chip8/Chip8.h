@@ -16,17 +16,17 @@
 #include <sys/time.h>
 
 
-void loadROM(const char *romPath);
+void chip8_loadROM(const char *romPath);
 
-void emulateCycle();
+void chip8_step();
 
-void keydown(unsigned char k);
-void keyup(unsigned char k);
+void chip8_keydown(unsigned char k);
+void chip8_keyup(unsigned char k);
+
+bool chip8_needsDisplay();
+void chip8_setNeedsDisplay(bool needsDisplay);
 
 extern unsigned char gfx[64][32]; // we expose the graphics buffer so the Chip8View can read from it to render to the screen.
-
-bool needsDisplay();
-void setNeedsDisplay(bool needsDisplay);
 
 
 #endif /* defined(__Chip8__Chip8__) */

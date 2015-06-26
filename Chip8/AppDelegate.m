@@ -64,12 +64,12 @@
 
 - (void)updateChip8:(NSTimer*)timer {
 	
-	emulateCycle();
+	chip8_step();
 }
 
 - (void)updateDisplay {
 	
-	if (needsDisplay() == true) {
+	if (chip8_needsDisplay() == true) {
 		[self.chip8view setNeedsDisplay:YES];
 	}
 }
@@ -86,7 +86,7 @@
 			NSURL *fileURL = [openPanel URL];
 			
 			NSString *path = [fileURL path];
-			loadROM([path cStringUsingEncoding:NSUTF8StringEncoding]);
+			chip8_loadROM([path cStringUsingEncoding:NSUTF8StringEncoding]);
 			
 			[self resume];
 		}

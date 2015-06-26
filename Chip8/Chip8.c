@@ -179,8 +179,8 @@ bool _needsDisplay = false;
 
 
 // Function Prototypes
-void chip8init();
-void unknownOpcode();
+void chip8_init();
+void chip8_unknownOpcode();
 
 // We use NSBeep() to play a tone when the soundTimer ends.
 // Instead of importing all of AppKit we just declare it's prototype here to keep the compiler from complaining.
@@ -188,10 +188,10 @@ void NSBeep(void);
 
 
 
-void loadROM(const char *romPath) {
+void chip8_loadROM(const char *romPath) {
 	
 	// Init the Chip8 system
-	chip8init();
+	chip8_init();
 	
 	
 	// Load the game into memory
@@ -209,7 +209,7 @@ void loadROM(const char *romPath) {
 }
 
 
-void chip8init() {
+void chip8_init() {
 	
 	// init the registers and memory
 	pc		= 0x200;	// program counter starts at 0x200
@@ -258,7 +258,7 @@ void chip8init() {
 }
 
 
-void emulateCycle() {
+void chip8_step() {
 	
 	// fetch opcode
 	// fetch one opcode from the memory at the location specified by the program counter (pc).
@@ -428,7 +428,7 @@ void emulateCycle() {
 			pc += 2;
 		}
 		else {
-			unknownOpcode();
+			chip8_unknownOpcode();
 		}
 	}
 	else if (maskedOpcode == 0x9000) {
@@ -509,7 +509,7 @@ void emulateCycle() {
 			}
 		}
 		else {
-			unknownOpcode();
+			chip8_unknownOpcode();
 		}
 	}
 	else if (maskedOpcode == 0xF000) {
@@ -579,11 +579,11 @@ void emulateCycle() {
 			pc += 2;
 		}
 		else {
-			unknownOpcode();
+			chip8_unknownOpcode();
 		}
 	}
 	else {
-		unknownOpcode();
+		chip8_unknownOpcode();
 	}
 	
 	
@@ -611,12 +611,12 @@ void emulateCycle() {
 	}
 }
 
-void unknownOpcode() {
+void chip8_unknownOpcode() {
 	
 	printf("Unknown opcode: 0x%X at PC: %d\n", opcode, pc);
 }
 
-void keydown(unsigned char k) {
+void chip8_keydown(unsigned char k) {
 	
 	switch (k) {
 		case '1':
@@ -673,7 +673,7 @@ void keydown(unsigned char k) {
 	}
 }
 
-void keyup(unsigned char k) {
+void chip8_keyup(unsigned char k) {
 	
 	switch (k) {
 		case '1':
@@ -730,10 +730,10 @@ void keyup(unsigned char k) {
 	}
 }
 
-bool needsDisplay() {
+bool chip8_needsDisplay() {
 	return _needsDisplay;
 }
 
-void setNeedsDisplay(bool needsDisplay) {
+void chip8_setNeedsDisplay(bool needsDisplay) {
 	_needsDisplay = needsDisplay;
 }
