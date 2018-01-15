@@ -12,11 +12,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include <time.h>
 #include <sys/time.h>
 
 
 void chip8_loadROM(const char *romPath);
+void chip8_init();
 
 void chip8_step();
 

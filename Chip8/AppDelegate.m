@@ -15,6 +15,7 @@
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet Chip8View *chip8view;
 @property (weak) IBOutlet NSMenuItem *pauseResumeMenuItem;
+@property (weak) IBOutlet NSMenuItem *resetMenuItem;
 
 @property (assign) BOOL paused;
 @property (strong) NSTimer *cpuTimer, *displayTimer;
@@ -34,6 +35,12 @@
 	
 	[self openROM:self];
 	[self.chip8view becomeFirstResponder];
+}
+
+- (IBAction)reset:(id)sender {
+    [self pause];
+    chip8_init();
+    [self resume];
 }
 
 - (IBAction)pauseResume:(id)sender {
@@ -87,7 +94,8 @@
 			
 			NSString *path = [fileURL path];
 			chip8_loadROM([path cStringUsingEncoding:NSUTF8StringEncoding]);
-			
+            chip8_init();
+
 			[self resume];
 		}
 	}];
