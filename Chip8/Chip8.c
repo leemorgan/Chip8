@@ -103,6 +103,9 @@ unsigned short opcode;
 // Sytem Memory (4 KB)
 unsigned char memory[4096];
 
+// Rom Data (3584 B)
+unsigned char rom_data[3584];
+
 // Registers
 unsigned char	V[16];	// 8-bit registers
 #define VF		V[0xF]	// VF (register 16) is a special register reserved for carry operations. So we define a convience accessor here.
@@ -186,31 +189,27 @@ void chip8_unknownOpcode();
 // Instead of importing all of AppKit we just declare it's prototype here to keep the compiler from complaining.
 void NSBeep(void);
 
-
-
 void chip8_loadROM(const char *romPath) {
-	
-	// Init the Chip8 system
-	chip8_init();
-	
-	
-	// Load the game into memory
-	// The first 512 bytes of memory are reserved, so we can't load more than 3584 bytes (3.5KB of our total 4KB memory)
+    // clear ROM data
+    for (int i = 0; i < 3584; i++) {
+        rom_data[i] = 0;
+    }
+
 	FILE *rom = fopen(romPath, "r");
 	if (rom != NULL) {
 		
-		size_t result = fread(&memory[512], sizeof(unsigned char), 3584, rom);
+		size_t result = fread(&rom_data, sizeof(unsigned char), 3584, rom);
 		
 		if (result == -1) {
 			printf("Failed to read rom into memory with error %zu\n", result);
 		}
 	}
 	fclose(rom);
+
+    chip8_init();
 }
 
-
 void chip8_init() {
-	
 	// init the registers and memory
 	pc		= 0x200;	// program counter starts at 0x200
 	opcode	= 0;		// zeroize the opcode
@@ -238,17 +237,20 @@ void chip8_init() {
 	for (int i = 0; i < 16; i++) {
 		V[i] = 0;
 	}
-	
 	// clear memory
-	for (int i = 0; i < 4096; i++) {
-		memory[i] = 0;
-	}
-	
+    for (int i = 0; i < 4096; i++) {
+        memory[i] = 0;
+    }
+    
 	// Load fontset
 	for (int i = 0; i < 80; i++) {
 		memory[i] = chip8_fontset[i];
 	}
-	
+
+    // Load the game into memory
+    // The first 512 bytes of memory are reserved, so we can't load more than 3584 bytes (3.5KB of our total 4KB memory)
+    memcpy(&memory[512], &rom_data, 3584);
+
 	// reset timers
 	delay_timer = 0;
 	sound_timer = 0;
